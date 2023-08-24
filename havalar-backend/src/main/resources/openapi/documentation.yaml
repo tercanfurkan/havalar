@@ -1,0 +1,38 @@
+openapi: "3.0.3"
+info:
+  title: "havalar_core API"
+  description: "havalar_core API"
+  version: "1.0.0"
+servers:
+- url: "https://havalar_core"
+paths:
+  /:
+    get:
+      description: ""
+      responses:
+        "200":
+          description: "OK"
+          content:
+            text/plain:
+              schema:
+                type: "string"
+              examples:
+                Example#1:
+                  value: "Hello World!"
+  /json/kotlinx-serialization:
+    get:
+      description: ""
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Map_String"
+components:
+  schemas:
+    Map:
+      type: "object"
+      properties: {}
+    Map_String:
+      type: "string"
